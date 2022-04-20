@@ -343,7 +343,7 @@ def csv2bvh_string(hierarchy_file, position_file, rotation_file, scale=1.0):
                         "Make sure the names match. They are case-sensitive.".format(position_file, root_name))
     root_pos_channels = [channel.split('.')[1].upper() + "position" for channel in root_pos_df]
     root_pos_indices = [pos_df.index(df) for df in root_pos_df]  # Get data indices for root position df.
-    root_pos_data = positions[:, root_pos_indices]
+    root_pos_data = positions #[:, root_pos_indices]
     n_frames = len(root_pos_data)
     
     # Get joint rotations.
