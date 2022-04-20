@@ -148,8 +148,8 @@ def write_joint_hierarchy(bvh_tree, filepath, scale=1.0):
         row = [joint_name, parent_name]
         row.extend((scale * offset for offset in bvh_tree.joint_offset(joint.name)))
         data.append(tuple(row))
-    data = np.array(data, dtype=[('joint', np.unicode_, 20),
-                                 ('parent', np.unicode_, 20),
+    data = np.array(data, dtype=[('joint', np.unicode_, 120),
+                                 ('parent', np.unicode_, 120),
                                  ('offset.x', np.float),
                                  ('offset.y', np.float),
                                  ('offset.z', np.float)])
