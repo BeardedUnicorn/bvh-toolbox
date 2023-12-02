@@ -23,7 +23,6 @@ setup(name='bvhtoolbox',
       author_email='contact@olafhaag.com',
       url='https://github.com/olafhaag/bvh-toolbox',
       classifiers=['License :: OSI Approved :: MIT License',
-                   #'Programming Language :: Python :: 2.7',  # untested
                    'Programming Language :: Python :: 3',
                    'Operating System :: OS Independent',
                    'Environment :: Console',

@@ -150,9 +150,9 @@ def write_joint_hierarchy(bvh_tree, filepath, scale=1.0):
         data.append(tuple(row))
     data = np.array(data, dtype=[('joint', np.unicode_, 120),
                                  ('parent', np.unicode_, 120),
-                                 ('offset.x', np.float),
-                                 ('offset.y', np.float),
-                                 ('offset.z', np.float)])
+                                 ('offset.x', float),
+                                 ('offset.y', float),
+                                 ('offset.z', float)])
     try:
         np.savetxt(filepath,
                    data,

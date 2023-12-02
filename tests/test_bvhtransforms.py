@@ -10,7 +10,7 @@ import numpy as np
 import bvhtoolbox as bt
 
 
-@given(a=arrays(dtype=np.float,
+@given(a=arrays(dtype=float,
                 shape=st.tuples(st.integers(min_value=0, max_value=600),
                                 st.integers(min_value=0, max_value=100)),
                 elements=st.floats(allow_nan=False)),
@@ -34,7 +34,7 @@ def test_get_reordered_indices(order):
     assert sorted(res) == [0, 1, 2]
     
     
-@given(a=arrays(dtype=np.float,
+@given(a=arrays(dtype=float,
                 shape=tuple(np.random.randint(1, 5) for _ in range(np.random.randint(1, 4))),
                 elements=st.floats(allow_nan=False)),
        axes=st.sampled_from(list(bt._AXES2TUPLE.keys())))
@@ -43,7 +43,7 @@ def test_reorder_axes_invalid_dimensionality(a, axes):
         bt.reorder_axes(a, axes=axes)
 
 
-# @given(a=arrays(dtype=np.float,
+# @given(a=arrays(dtype=float,
 #                 shape=st.one_of(st.just(3),st.tuples(st.integers(min_value=1), st.just(3))),
 #                 elements=st.floats(allow_nan=False, allow_infinity=False),
 #                 unique=True),
